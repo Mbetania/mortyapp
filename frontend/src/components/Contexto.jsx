@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { DataContext} from '../context/DataContext'
+import  DataContext from '../context/DataContext'
 
 export const Contexto = () => {
 

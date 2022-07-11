@@ -1,24 +1,30 @@
-import React from 'react'
 import { createContext, useState } from "react"
+import React from 'react'
 
-export const DataContext = createContext()
+const DataContext = createContext();
 
 const dataFixed = {
     nombre: 'betania',
     edad: 26
 }
 
-export const CartProvider = ({ children }) => {
+export function CartProvider({ children }) {
+    const [data, setData] = useState(dataFixed);
 
-    const [data, setData] = useState(dataFixed)
+    const addEdadDeVida = () => {
+        setData({nombre:data.nombre, edad:Number(data.edad)+1});
+    };
 
     return (
         <DataContext.Provider value={{
             data,
-            setData
+            setData,
+            addEdadDeVida,
         }}>
             {children}
         </DataContext.Provider>
     )
 }
+
+export default DataContext
 
