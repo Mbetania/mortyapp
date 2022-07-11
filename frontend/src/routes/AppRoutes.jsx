@@ -9,18 +9,33 @@ import PersonsDetail from '../components/PersonsDetail';
 import {Contexto} from '../components/Contexto';
 import {Cart} from '../components/Cart';
 import BotonCambiarData from '../components/BotonCambiarData';
+import { BotonModal } from '../components/BotonModal';
+import { Botonera } from '../components/botones/Botonera';
+import { useEffect, useState } from 'react';
 
 
 
 
 function AppRoutes() {
-
+  const [color, setColor] = useState(0)
+  const [body, setBody] = useState({
+    color: color,
+    isCold: false
+  })
+  useEffect(() => {
+    setBody ({
+      ...body,
+      color: color
+    })
+  }, [color])
+  
 
   return (
     <CartProvider>
       <div>
         <div className='header'>
           <h1>hola hola</h1>
+          <BotonModal/>
           <NavBar />
         </div>
         <Routes>
@@ -33,6 +48,7 @@ function AppRoutes() {
           <Route path='cart' element={<Cart />} />
         </Routes>
         <BotonCambiarData />
+        <Botonera color={color} setColor={setColor}/>
       </div>
     </CartProvider>
   );
