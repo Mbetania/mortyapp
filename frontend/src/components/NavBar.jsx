@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {BsBugFill} from 'react-icons/bs'
 
 const paginas = [
   {
@@ -26,6 +27,7 @@ const paginas = [
 const NavBar = () => {
   return (
     <>
+    <BsBugFill color='violet'/>
     <ul>
     {paginas.map((page) =>(
       <li key={page.id}>
