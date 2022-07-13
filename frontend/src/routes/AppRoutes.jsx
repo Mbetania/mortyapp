@@ -14,6 +14,7 @@ import BotonCambiarData from '../components/BotonCambiarData';
 import { BotonModal } from '../components/BotonModal';
 import { Botonera } from '../components/botones/Botonera';
 import { useEffect, useState } from 'react';
+import { Semaforo } from '../components/semaforo/Semaforo';
 
 
 
@@ -51,6 +52,9 @@ function AppRoutes() {
         </Routes>
         <BotonCambiarData />
         <Botonera color={color} setColor={setColor}/>
+        <div>
+          <Semaforo/>
+        </div>
       </div>
     </CartProvider>
   );

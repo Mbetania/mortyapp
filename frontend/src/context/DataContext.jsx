@@ -15,6 +15,13 @@ export function CartProvider({ children }) {
         setData({nombre:data.nombre, edad:Number(data.edad)+1});
     };
 
+    const deleteEdad = () => {
+        // setData(data.filter)(dat=>dat.edad !==edad)
+    };
+    // const isInCart = (nombre)= () =>{
+        // return data.some(mismonombre => mismonombre.nombre => nombre)
+    // }
+
     return (
         <DataContext.Provider value={{
             data,
