@@ -15,6 +15,7 @@ import { BotonModal } from '../components/BotonModal';
 import { Botonera } from '../components/botones/Botonera';
 import { useEffect, useState } from 'react';
 import { Semaforo } from '../components/semaforo/Semaforo';
+import { Count } from '../components/Count';
 
 
 
@@ -55,6 +56,7 @@ function AppRoutes() {
         <div>
           <Semaforo/>
         </div>
+        <Count/>
       </div>
     </CartProvider>
   );
