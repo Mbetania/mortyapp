@@ -10,7 +10,7 @@ const SearchPage = () => {
     <>
     <Link to={Home}>Home</Link>
 
-    <Link to={Persons}> section</Link>
+    {/* <Link to={Persons}> section</Link> */}
     </>
   )
 }
