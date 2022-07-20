@@ -4,13 +4,13 @@ import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import PersonsDetail from './PersonsDetail'
 
-const Persons = () => {
-  let [pageNumber, setPageNumber] = useState(1)
-  const [fetchCharacters, updateFetchCharacters] = useState([])
-  const {info, results} = fetchCharacters
-  const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
-  console.log(results)
-  const [characterList, setCharacterList] = useState([])
+// const Persons = () => {
+//   let [pageNumber, setPageNumber] = useState(1)
+//   const [fetchCharacters, updateFetchCharacters] = useState([])
+//   const {info, results} = fetchCharacters
+//   const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+//   console.log(results)
+//   const [characterList, setCharacterList] = useState([])
 
   // const getCharacter = async (character) =>{
 
@@ -28,14 +28,14 @@ const Persons = () => {
   // }
 
 
-  useEffect(() => {
-    (async function () {
-      let data = await fetch(url).then((res) => res.json())
-      updateFetchCharacters(data)
-    })()
+  // useEffect(() => {
+  //   (async function () {
+  //     let data = await fetch(url).then((res) => res.json())
+  //     updateFetchCharacters(data)
+  //   })()
 
     // getCharacter()
-  }, [url])
+  // }, [url])
   
   
   // const [message, setMessage] = useState('default')
@@ -51,13 +51,13 @@ const Persons = () => {
 
 
 
-  return (
-    <>
-    <PersonsDetail array={characterList}/>
-    <Link to= '../search-page'> Volver</Link>
-    </>
+  // return (
+  //   <>
+  //   <PersonsDetail array={characterList}/>
+  //   <Link to= '../search-page'> Volver</Link>
+  //   </>
     // <div>{pages==='Jerrys' ? 'idiota' : <p>{pages}</p>}</div>
-  )
-}
+//   )
+// }
 
-export default Persons
+// export default Persons

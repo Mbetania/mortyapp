@@ -4,7 +4,6 @@ import 'bootstrap/dist/js/bootstrap'
 import '../styles/App.css'
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
-import SearchPage from '../components/SearchPage';
 import { useEffect, useState } from 'react';
 
 
@@ -21,7 +20,6 @@ function AppRoutes() {
       color: color
     })
   }, [color])
-  
 
   return (
     // <CartProvider>
@@ -32,7 +30,6 @@ function AppRoutes() {
         </div>
         <Routes>
           <Route path='/*' element={<Home />} />
-          <Route path='/search-page' element={<SearchPage />} />
           <Route path='/section/:pages/*' element={<Home/>}>
           </Route>
         </Routes>
