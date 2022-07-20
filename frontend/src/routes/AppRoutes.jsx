@@ -5,6 +5,9 @@ import '../styles/App.css'
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import { useEffect, useState } from 'react';
+import { Episodes } from '../pages/Episodes';
+import { Location } from '../pages/Location';
+
 
 
 
@@ -25,17 +28,17 @@ function AppRoutes() {
     // <CartProvider>
       <div>
         <div className='header'>
-          <h1>hola hola</h1>
           <NavBar />
         </div>
         <Routes>
-          <Route path='/*' element={<Home />} />
-          <Route path='/section/:pages/*' element={<Home/>}>
-          </Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/episodes' element={<Episodes />} />
+          <Route path='/location' element={<Location />} />
+          {/* <Route path='/section/:pages/*' element={<Home/>}>
+          </Route> */}
         </Routes>
         <div>
         </div>
-        {/* <Count/> */}
       </div>
     // </CartProvider>
   );

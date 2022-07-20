@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import PersonsDetail from './PersonsDetail'
+import PersonsDetail from '../components/PersonsDetail'
 
 // const Persons = () => {
 //   let [pageNumber, setPageNumber] = useState(1)

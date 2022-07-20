@@ -23,7 +23,6 @@ const Home = () => {
 
   return (
     <div className='App'>
-      <h1 className='text-center ubuntu my-4'>Rick ands <span className='text-primary'>Morty </span></h1>
       <SearchPage setPageNumber={setPageNumber} setSearch={setSearch}/>
       <div className='container'>
         <div className="row">
