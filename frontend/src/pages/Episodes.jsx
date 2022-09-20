@@ -36,50 +36,38 @@ export const Episodes = () => {
             <div className="row">
                 <div className="col-3">
                     <div className="text-center mb-4">
-
                     </div>
-        <div className='container'>
-            <div className="row mb-4">⁡
-                <h1 className="text-center mb-4">Episode: {''}
-                    <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
-                </h1>
-                <h5 className="text-center">Air Date {air_date === '' ? 'Unknown' : air_date}</h5>
-            </div>
-            <div className="row">
-                <div className="col-3">
-                    <div className="text-center">
-
+                    <div className='container'>
+                        <div className="row">
+                            <div className="col-3">
+                                <div className="text-center">
+                                </div>
+                                <div className='container'>
+                                    <div className="row mb-4">⁡
+                                        <h1 className="text-center mb-4">Episode: {''}
+                                            <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
+                                        </h1>
+                                        <h5 className="text-center">Air Date {air_date === '' ? 'Unknown' : air_date}</h5>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-3">
+                                            <h4 className="text-center">Pick Episodes</h4>
+                                        </div>
+                                        <div className="col-8">
+                                            <div className="row">
+                                                {/* <Cards results={results} /> */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-8">
+                                <div className="row">
+                                    {/* <Cards results={results} /> */}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-        <div className='container'>
-            <div className="row mb-4">⁡
-                <h1 className="text-center mb-4">Episode: {''}
-                    <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
-                </h1>
-                <h5 className="text-center">Air Date {air_date === '' ? 'Unknown' : air_date}</h5>
-            </div>
-            <div className="row">
-                <div className="col-3">
-                    <h4 className="text-center">Pick Episodes</h4>
-                </div>
-                <div className="col-8">
-                    <div className="row">
-                        <Cards results={results} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
-                </div>
-                <div className="col-8">
-                    <div className="row">
-                        <Cards results={results} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
                 </div>
                 <div className="col-8">
                     <div className="row">
