@@ -5,20 +5,24 @@ import { Pagination } from './pagination/Pagination'
 import SearchPage from './search/SearchPage'
 
 const Home = () => {
+
+  const {REACT_APP_URL_API_RYMPRINCIPAL} = process.env
   const [pageNumber, setPageNumber] = useState(1)
   const [search, setSearch] = useState('')
 
   const [fetchCharacters, updateFetchCharacters] = useState([])
   const {info, results } = fetchCharacters
 
-  const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+  const url = `${REACT_APP_URL_API_RYMPRINCIPAL}/character/?page=${pageNumber}&name=${search}`
+
+  async function updateCharacters() {
+    const data = await fetch(url).then((res) => res.json())
+    // const response = await data
+    updateFetchCharacters(data)
+  }
 
   useEffect(() => {
-    (async function () {
-      let data = await fetch(url).then((res) => res.json())
-      updateFetchCharacters(data)
-    })()
-
+    updateCharacters()
   }, [url])
 
   return (
