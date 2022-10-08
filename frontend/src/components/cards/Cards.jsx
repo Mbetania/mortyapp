@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styles from '../../styles/cards/Cards.module.scss'
 
-export const Cards = ({ results }) => {
+export const Cards = ({ characters:results }) => {
     let display = ''
-
-
+    
+    console.log(results)
     if (results) {
         display = results.map((x) => {
             let { id, name, image, location, status } = x

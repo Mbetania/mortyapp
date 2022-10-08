@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from 'react'
+import { getCharacters, getLocations } from '../services/onboarding.service'
 import { Cards } from './cards/Cards'
 import { Filters } from './filters/Filters'
 import { Pagination } from './pagination/Pagination'
 import SearchPage from './search/SearchPage'
 
 const Home = () => {
-
-  const {REACT_APP_URL_API_RYMPRINCIPAL} = process.env
+  const [loading, setLoading] = useState(true)
   const [pageNumber, setPageNumber] = useState(1)
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('a')
 
-  const [fetchCharacters, updateFetchCharacters] = useState([])
-  const {info, results } = fetchCharacters
-
-  const url = `${REACT_APP_URL_API_RYMPRINCIPAL}/character/?page=${pageNumber}&name=${search}`
+  const [fetchCharacters, setFetchCharacters] = useState([])
 
   async function updateCharacters() {
-    const data = await fetch(url).then((res) => res.json())
-    // const response = await data
-    updateFetchCharacters(data)
+    try {
+      const query = `page=${pageNumber}&name=${search}`
+      const data = await getCharacters(query)
+      setFetchCharacters(data.results)
+      console.log(data.results)
+    } catch (error) {
+      console.log(error)
+    }
+    setLoading(false)
   }
 
   useEffect(() => {
     updateCharacters()
-  }, [url])
+    // try {
+    //   const query = `page=${pageNumber}&name=${search}`
+    //   const data = await getLocations(query)
+    //   console.log(data)
+    // } catch (error) {
+    //   console.log(error)
+    // }
+  }, [])
 
   return (
     <div className='App'>
@@ -35,15 +45,15 @@ const Home = () => {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards results={results} />
-              {/* <Cards/>
-            <Cards/>   */}
+              {loading ? <>CARGANDO PERRA</> :
+              <Cards characters={fetchCharacters} /> 
+              }
             </div>
           </div>
         </div>
       </div>
 
-      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      {/* <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber}/> */}
     </div>
   )
 }
