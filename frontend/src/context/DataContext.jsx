@@ -4,8 +4,8 @@ import React from 'react'
 const DataContext = createContext();
 
 const dataFixed = {
-    nombre: 'betania',
-    edad: 26
+    nombre: '',
+    edad: '',
 }
 
 export function CartProvider({ children }) {

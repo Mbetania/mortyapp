@@ -9,7 +9,7 @@ const Home = () => {
   const [search, setSearch] = useState('')
 
   const [fetchCharacters, updateFetchCharacters] = useState([])
-  const { results } = fetchCharacters
+  const {info, results } = fetchCharacters
 
   const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
@@ -39,7 +39,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </div>
   )
 }
